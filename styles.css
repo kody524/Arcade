@@ -1,78 +1,276 @@
-div{
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    height: 650px;
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 650px;
 }
-
-table{
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    width: 300px;
-    border-collapse: collapse;
+div.button-hide {
+    display: none;
+    height: 30px;
 }
-td{
-    height: 100px;
-    width: 100px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-} 
-.first:nth-child(1n+1) {
-    border-top:none; 
+div.button {
+    height: 30px;
 }
-td:nth-child(1){
-    border-left: none;
-    border-bottom: none;
+table {
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  border-collapse: collapse;
 }
-td:nth-child(3){
-    border-right: none;
-    border-bottom: none;
+td {
+  height: 100px;
+  width: 100px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  font-size: 100px;
+  text-align: center;
 }
-.third:nth-child(2){
-    border-bottom: none;
+ tr:nth-child(1) td:nth-child(1n+1){
+  border-top: none;
+}
+tr:nth-child(3) td:nth-child(1n+1){
+  border-bottom: none;
+}
+tr:nth-child(n+1) td:nth-child(3n){
+  border-right: none;
+}
+tr:nth-child(n+1) td:nth-child(n+1){
+  border-left: none;
 }
 .frontpage {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: rgba(0,0,0,.8);
-    height: 730px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 1000px;
 }
 div.frontpage > button {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    height: 50px;
-    width: 100px;
-    margin: 25px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  margin: 25px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
 }
 div.frontpage > button:hover {
+  background-color: black;
+  color: white;
+}
+.frontpage-hide {
+  display: none;
+}
+#names {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+p.playerone {
+  color: red;
+  font-size: xx-large;
+  font-family: "Times New Roman", Times, serif;
+}
+p.playeroneturn {
+    color:black;
+    font-size: xx-large;
+    font-family: "Times New Roman", Times, serif;
+  }
+p.playertwo {
+  color: blue;
+  font-size: xx-large;
+  font-family: "Times New Roman", Times, serif;
+}
+p.playertwoturn {
+    color: black;
+    font-size: xx-large;
+    font-family: "Times New Roman", Times, serif;
+  }
+button#random {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color:black;
+    cursor: pointer;
+}
+button#random:hover {
     background-color: black;
     color: white;
 }
-.frontpage-hide {
-    display: none;
-}
-#names {
-    height: 50px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default Design */
+.gfg-div {
+ 
+    /* To make all elements center */
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-p#playerone {
-    color: red;
-    font-size: xx-large;
-    font-family: 'Times New Roman', Times, serif;
-}
-p#playertwo {
-    color: blue;
-    font-size: xx-large;  
-    font-family: 'Times New Roman', Times, serif;
-}
+    justify-content: center;
+    align-items: center;
+   
+    /* Default Styling */
+    margin: 20px auto;
+    padding: 30px;
+    font-size: 30px;
+    width: 300px;
+    height: 300px;
+    background-color: darkseagreen;
+    color: black;
+  }
+   
+  /* For Desktop View */
+  @media screen and (min-width: 1024px) {
+    .gfg-div {
+      background-color: #63c971;
+      color: #fff;
+    }
+  }
+   
+  /* For Tablet View */
+  @media screen and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+    .gfg-div {
+      width: 400px;
+      height: 400px;
+      background-color: orange;
+      color: black;
+    }
+  }
+   
+  /* For Mobile Portrait View */
+  @media screen and (max-device-width: 480px)
+  and (orientation: portrait) {
+    .gfg-div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      color: #fff;
+    }
+  }
+   
+  /* For Mobile Landscape View */
+  @media screen and (max-device-width: 640px)
+  and (orientation: landscape) {
+    .gfg-div {
+      width: 400px;
+      height: 200px;
+      background-color: cyan;
+      color: black;
+    }
+  }
+   
+  /* For Mobile Phones Portrait or Landscape View */
+  @media screen and (max-device-width: 640px) {
+    .gfg-div {
+      width: 400px;
+      height: 200px;
+      background-color: chartreuse;
+      color: black;
+    }
+  }
+   
+  /* For iPhone 4 Portrait or Landscape View */
+  @media screen and (min-device-width: 320px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .gfg-div {
+      width: 400px;
+      height: 400px;
+      background-color: brown;
+      color: black;
+    }
+  }
+   
+  /* For iPhone 5 Portrait or Landscape View */
+  @media (device-height: 568px) and (device-width: 320px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .gfg-div {
+      width: 400px;
+      height: 400px;
+      background-color: cornflowerblue;
+      color: black;
+    }
+  }
+   
+  /* For iPhone 6 and 6 plus Portrait or Landscape View */
+  @media (min-device-height: 667px) and (min-device-width: 375px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .gfg-div {
+      width: 400px;
+      height: 400px;
+      background-color: darkgoldenrod;
+      color: black;
+    }
+  }
