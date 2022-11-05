@@ -24,9 +24,11 @@ td {
   border-style: solid;
   border-width: 2px;
   border-color: black;
-  font-size: 100px;
+  font-size: 75px;
   text-align: center;
+  cursor: pointer;
 }
+
  tr:nth-child(1) td:nth-child(1n+1){
   border-top: none;
 }
@@ -73,23 +75,23 @@ div.frontpage > button:hover {
   justify-content:space-around;
 }
 p.playerone {
-  color: red;
-  font-size: xx-large;
+  color:black;
+  font-size: x-large;
   font-family: "Times New Roman", Times, serif;
 }
 p.playeroneturn {
-    color:black;
-    font-size: xx-large;
+    color:green;
+    font-size: 50px;
     font-family: "Times New Roman", Times, serif;
   }
 p.playertwo {
-  color: blue;
+  color: black;
   font-size: xx-large;
   font-family: "Times New Roman", Times, serif;
 }
 p.playertwoturn {
-    color: black;
-    font-size: xx-large;
+    color: green;
+    font-size: 50px;
     font-family: "Times New Roman", Times, serif;
   }
 button#random {
@@ -106,6 +108,7 @@ button#random:hover {
     background-color: black;
     color: white;
 }
+  
 
 
 
