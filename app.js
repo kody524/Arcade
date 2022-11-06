@@ -6,82 +6,219 @@ const randomButton = document.getElementById("random");
 const player1 = document.getElementById("player1");
 const player2 = document.getElementById("player2");
 const table = document.getElementById("tables");
-const tdzero = document.getElementById("0").innerHTML
-const tdone = document.getElementById("1").innerHTML
-const tdtwo = document.getElementById("2").innerHTML
-const tdthree = document.getElementById("3").innerHTML
-const tdfour = document.getElementById("4").innerHTML
-const tdfive = document.getElementById("5").innerHTML
-const tdsix = document.getElementById("6").innerHTML
-const tdseven = document.getElementById("7").innerHTML
-const tdeight = document.getElementById("8").innerHTML
-let firstPlayer;
-let secondPlayer;
-let indexBoard = []
-let valueBoard =[]
+const one = document.getElementById("0")
+const two = document.getElementById("1")
+const three = document.getElementById("2")
+const four = document.getElementById("3")
+const five = document.getElementById("4")
+const six = document.getElementById("5")
+const seven = document.getElementById("6")
+const eight = document.getElementById("7")
+const nine = document.getElementById("8")
+const winner = document.getElementById("winner")
+let name1;
+let name2;
+let number;
 
 
- playerVsPlayer.addEventListener("click", function () {
-   introPage.className = "frontpage-hide";
-   divForButton.className = "button"
-   names();
- });
 
- function names() {
-   let firstPlayerName = prompt("First Player Name");
-   let secondPlayerName = prompt("Second Player Name");
-   if (firstPlayerName != null) {
-     player1.innerHTML = "X:" + firstPlayerName; 
-   }
-   if (secondPlayerName != null) {
-     player2.innerHTML = "O:" + secondPlayerName;
-      
+playerVsPlayer.addEventListener("click", function () {
+  introPage.className = "frontpage-hide";
+  divForButton.className = "button";
+  names();
+});
+
+function names() {
+  let firstPlayerName = prompt("First Player Name");
+  let secondPlayerName = prompt("Second Player Name");
+  if (firstPlayerName != null) {
+    player1.innerHTML = "X:" + firstPlayerName;
+  }
+  if (secondPlayerName != null) {
+    player2.innerHTML = "O:" + secondPlayerName;
   }
 }
-function randomTurn(){
-  const number = Math.floor(Math.random()*2);
-    if(number===1){
-        player1.className = "playeroneturn";
-        firstPlayer = true;
-        secondPlayer = false;
-    }if(number===0){
-        player2.className = "playertwoturn";
-        secondPlayer = true;
-        firstPlayer = false;
-    }
-    randomButton.disabled = true 
+function randomTurn() {
+  const randomNumber = Math.floor(Math.random() * 2);
+  if (randomNumber === 0) {
+    number = 0
+    player1.className = "playeroneturn";  
+  }
+  if (randomNumber === 1) {
+    number = 1
+    player2.className = "playertwoturn";
+  }
+  randomButton.disabled = true;
 }
 
- function chooseBox(event){
-   let target = event.target;
-   if(firstPlayer&&!secondPlayer){
-     target.innerHTML = "X"
-     firstPlayer = false;
-     secondPlayer = true;
-     player1.className = "playerone"
-     player2.className = "playertwoturn"
-     indexBoard.push(target)
-     valueBoard.push(target.innerHTML)
-
-     
-   }else if(!firstPlayer&&secondPlayer){
-    target.innerHTML = "O"
-    firstPlayer = true;
-     secondPlayer = false;
-     player2.className = "playertwo"
-     player1.className = "playeroneturn"
-     indexBoard.push(target)
-     valueBoard.push(target.innerHTML)
-     
-   }
-
-   }
-
-
-
-table.addEventListener("click",chooseBox)
-
+function chooseBox(event) {
+  let target = event.target;
+  if (number === 0) {
+    target.innerText = "X";
+    player1.className = "playerone";
+    player2.className = "playertwoturn";
+    number = 1
+  }else{
+    target.innerText = "O";
+    player2.className = "playertwo";
+    player1.className = "playeroneturn";
+    number  = 0
+  }
   
-randomButton.addEventListener("click",randomTurn)
-console.log(indexBoard)
-console.log(valueBoard)
+}
+
+function check(){
+
+
+  if(one.innerText=='X'&&two.innerText=='X'&&three.innerText=='X'){
+   console.log('hi')
+
+    winner.innerText =  'X has Won'
+
+
+  }
+
+
+  if(four.innerText=='X'&&five.innerText=='X'&&six.innerText=='X'){
+    console.log('hi')
+
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(seven.innerText=='X'&&eight.innerText=='X'&&nine.innerText=='X'){
+    console.log('hi')
+
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(one.innerText=='X'&&four.innerText=='X'&&seven.innerText=='X'){
+
+    console.log('hi')
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(two.innerText=='X'&&five.innerText=='X'&&eight.innerText=='X'){
+
+    console.log('hi')
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(three.innerText=='X'&&six.innerText=='X'&&nine.innerText=='X'){
+    console.log('hi')
+
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(one.innerText=='X'&&five.innerText=='X'&&nine.innerText=='X'){
+
+    console.log('hi')
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(three.innerText=='X'&&five.innerText=='X'&&seven.innerText=='X'){
+
+    console.log('hi')
+    winner.innerText = 'X has Won'
+
+
+  }
+
+
+  if(one.innerText=='O'&&two.innerText=='O'&&three.innerText=='O'){
+    console.log('hi')
+
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(four.innerText=='O'&&five.innerText=='O'&&six.innerText=='O'){
+
+    console.log('hi')
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(seven.innerText=='O'&&eight.innerText=='O'&&nine.innerText=='O'){
+    console.log('hi')
+
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(one.innerText=='O'&&four.innerText=='O'&&seven.innerText=='O'){
+
+    console.log('hi')
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(two.innerText=='O'&&five.innerText=='O'&&eight.innerText=='O'){
+
+    console.log('hi')
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(three.innerText=='O'&&six.innerText=='O'&&nine.innerText=='O'){
+    console.log('hi')
+
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(one.innerText=='O'&&five.innerText=='O'&&nine.innerText=='O'){
+
+    console.log('hi')
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+  if(three.innerText=='O'&&five.innerText=='O'&&seven.innerText=='O'){
+
+    console.log('hi')
+    winner.innerText ='X has Won'
+
+
+  }
+
+
+ }
+table.addEventListener("click", chooseBox);
+table.addEventListener('click',check)
+randomButton.addEventListener("click", randomTurn);
+
+
+
+
